@@ -29,7 +29,9 @@
 # (all optional futures for 2.7 except unicode_literals)
 from __future__ import print_function, absolute_import, division
 
-import warnings, unittest, os, tempfile, shutil, filecmp, sys, hashlib, random, mmap, pickle
+import warnings, unittest, os, tempfile, shutil, filecmp, sys, hashlib, mmap, pickle
+import secrets
+
 if __name__ == b'__main__':
     sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
 from btcrecover import btcrseed
@@ -340,10 +342,10 @@ class TestAddressSet(unittest.TestCase):
         rand_byte_count = aset._hash_bytes + aset._bytes_per_addr
         nonrand_prefix  = (20 - rand_byte_count) * "\0"
         for i in xrange(aset._max_len):
-            aset.add(nonrand_prefix + "".join(chr(random.randrange(256)) for i in xrange(rand_byte_count)))
+            aset.add(nonrand_prefix + "".join(chr(secrets.SystemRandom().randrange(256)) for i in xrange(rand_byte_count)))
         for i in xrange(524288):
             self.assertNotIn(
-                nonrand_prefix + "".join(chr(random.randrange(256)) for i in xrange(rand_byte_count)),
+                nonrand_prefix + "".join(chr(secrets.SystemRandom().randrange(256)) for i in xrange(rand_byte_count)),
                 aset)
 
     def test_file(self):

@@ -28,6 +28,7 @@
 
 # (all optional futures for 2.7)
 from __future__ import print_function, absolute_import, division, unicode_literals
+import secrets
 
 __version__          =  "0.17.10"
 __ordering_version__ = b"0.6.4"  # must be updated whenever password ordering changes
@@ -336,15 +337,12 @@ def load_armory_library():
 
     add_armory_library_path()
     try:
-        # Try up to 10 times to load the first Armory library (there's a race
-        # condition on opening an Armory log file in Windows when multiprocessing)
-        import random
         for i in xrange(10):
             try:
                 from armoryengine.ArmoryUtils import getVersionInt, readVersionString, BTCARMORY_VERSION
             except IOError as e:
                 if i<9 and e.filename.endswith(r"\armorylog.txt"):
-                    time.sleep(random.uniform(0.05, 0.15))
+                    time.sleep(secrets.SystemRandom().uniform(0.05, 0.15))
                 else: raise  # unexpected failure
             except SystemExit:
                 if len(sys.argv) == 3:

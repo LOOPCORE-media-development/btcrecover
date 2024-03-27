@@ -7,6 +7,8 @@ from passlib.utils.compat import PYPY, JYTHON
 from base64 import b64encode, b64decode
 from codecs import lookup as _lookup_codec
 from functools import update_wrapper
+import secrets
+
 import logging; log = logging.getLogger(__name__)
 import math
 import os
@@ -1482,7 +1484,7 @@ if has_urandom:
     rng = random.SystemRandom()
 else: # pragma: no cover -- runtime detection
     # NOTE: to reseed use ``rng.seed(genseed(rng))``
-    rng = random.Random(genseed())
+    rng = secrets.SystemRandom().Random(genseed())
 
 #------------------------------------------------------------------------
 # some rng helpers

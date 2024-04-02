@@ -25,7 +25,6 @@
 #
 #                      Thank You!
 
-from __future__ import print_function
 import sys, os.path, atexit, uuid, urllib2, json, time
 
 # The base URL

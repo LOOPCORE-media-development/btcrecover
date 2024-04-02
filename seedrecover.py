@@ -25,7 +25,6 @@
 
 # PYTHON_ARGCOMPLETE_OK - enables optional bash tab completion
 
-from __future__ import print_function
 
 from btcrecover import btcrseed
 import sys, multiprocessing

@@ -27,7 +27,6 @@
 #                      Thank You!
 
 # (all optional futures for 2.7 except unicode_literals)
-from __future__ import print_function, absolute_import, division
 
 import warnings, unittest, os, tempfile, shutil, filecmp, sys, hashlib, mmap, pickle
 import secrets

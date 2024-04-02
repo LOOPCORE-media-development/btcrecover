@@ -27,7 +27,6 @@
 # TODO: pythonize comments/documentation
 
 # (all optional futures for 2.7)
-from __future__ import print_function, absolute_import, division, unicode_literals
 import secrets
 
 __version__          =  "0.17.10"

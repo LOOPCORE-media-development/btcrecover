@@ -25,7 +25,6 @@
 #
 #                      Thank You!
 
-from __future__ import print_function
 
 # Use the green test runner if available
 try:

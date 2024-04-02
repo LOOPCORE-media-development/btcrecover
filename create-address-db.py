@@ -25,7 +25,6 @@
 #
 #                      Thank You!
 
-from __future__ import print_function
 
 from btcrecover import addressset
 import argparse, sys, atexit

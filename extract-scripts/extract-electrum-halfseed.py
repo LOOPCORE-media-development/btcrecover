@@ -28,7 +28,6 @@
 # Special thanks to Bitcointalk.org user Wotan777 who discovered a better way
 # to work with Electrum wallets, and who made this extract script possible.
 
-from __future__ import print_function
 import sys, os.path, ast, base64, zlib, struct
 
 prog = os.path.basename(sys.argv[0])

@@ -25,7 +25,6 @@
 #
 #                      Thank You!
 
-from __future__ import print_function
 import sys, os.path, sqlite3, base64, zlib, struct
 
 prog = os.path.basename(sys.argv[0])

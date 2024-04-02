@@ -25,7 +25,6 @@
 #
 #                      Thank You!
 
-from __future__ import print_function
 import sys, os.path, struct, zlib, base64, time
 
 prog = os.path.basename(sys.argv[0])

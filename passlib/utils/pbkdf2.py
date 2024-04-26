@@ -247,7 +247,7 @@ def get_prf(name):
     if name in _prf_cache:
         return _prf_cache[name]
     if isinstance(name, str):
-        if name.startswith("hmac-") or name.startswith("hmac_"):
+        if name.startswith(("hmac-", "hmac_")):
             retval = _get_hmac_prf(name[5:])
         else:
             raise ValueError("unknown prf algorithm: %r" % (name,))

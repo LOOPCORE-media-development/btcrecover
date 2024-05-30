@@ -754,7 +754,6 @@ class WalletBitcoinCore(object):
                         if i + 1 < item_count:  # don't need to seek if this is the last item in the page
                             assert pos < page_base + page_size, "next item is located in current page"
                             wallet_file.seek(pos)
-                    else: continue  # if not found on this page, continue to next page
                     break           # if we broke out of inner loop, break out of this one too
 
         if not mkey:
